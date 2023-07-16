@@ -34,15 +34,19 @@ interface IResponse {
   response?: any,
 }
 
+interface EventTarget {
+  value: string;
+}
+
 const TestingArea = ({ child }: Iprops) => {
   const [isTest, setIsTest] = useState(false);
   const [isExecute, setIsExecute] = useState(false);
   const [value, setValue] = useState('');
   const [postValue, setPostValue] = useState(initialPostValue);
   const [isLoading, setIsLoading] = useState(false);
-  const [data, setData] = useState<IResponse>();
+  const [data, setData] = useState<any>();
 
-  const valueChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const valueChange = (event: React.ChangeEvent<EventTarget>) => {
     child === 'GET' && setValue(event.target.value);
     child === 'DELETE' && setValue(event.target.value);
     child === 'POST' && setPostValue(event.target.value);
@@ -182,7 +186,7 @@ const TestingArea = ({ child }: Iprops) => {
               <pre>
                   Curl -X {child}<br />
                 {JSON.stringify(data.config.url)}<br />
-                  -H 'accept: */*'
+                  -H `accept: */*`
               </pre>
             </MicrolightStyled>
             <H4Styled>Request URL</H4Styled>
