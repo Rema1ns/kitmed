@@ -1,1 +1,1 @@
-# https://bloger-two.vercel.app/
+# открыть терминал и написать: 'npm run start'

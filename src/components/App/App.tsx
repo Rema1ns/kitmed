@@ -1,5 +1,3 @@
-import { useSelector } from 'react-redux';
-
 import Header from '../header/Header';
 import Title from '../Title/Title';
 import Content from '../content/Content';
