@@ -162,6 +162,8 @@ const TestingArea = ({ child }: Iprops) => {
             readOnly={!isTest}
             props={isTest}
             value={value}
+            type="number"
+            inputMode="numeric"
             placeholder="id"
           />
         </TbodyStyled>}
